@@ -113,6 +113,18 @@ button:hover {
 button:active {
   transform: scale(0.95);
 }
+.buttonOperator.ac {
+  background-color: #ff6666;
+  color: white;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 2px 5px rgba(255, 102, 102, 0.5);
+  transition: background-color 0.3s;
+}
+
+.buttonOperator.ac:hover {
+  background-color: #e05555;
+}
 
 .equal {
   background-color: rgb(239, 113, 11);
