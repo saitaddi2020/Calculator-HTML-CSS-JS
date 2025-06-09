@@ -1,99 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="calculator.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="calculator.css">
 </head>
 <body>
-  <div class="container">
-    <div class="calculator">
-    <input type="number" placeholder="0" id="input">
-    <div>
-        <button class="buttonOperator">AC</button>
-        <button class="buttonOperator">DEL</button>
-        <button class="buttonOperator">AC</button>
-        <button class="buttonOperator">/</button>
+  <div class="calculator" id="calculator">
+    <div class="top-bar">
+      <input type="text" placeholder="0" id="input" readonly>
+      <button class="toggle-mode" id="modeToggle">
+        <i class="fa-regular fa-lightbulb"></i>
+      </button>
     </div>
-    <div>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button class="buttonOperator">*</button>
+    <div id="status"></div>
+    <div id="history" class="history-log"></div>
+
+    <div class="button-row">
+      <button class="buttonOperator">AC</button>
+      <button class="buttonOperator">%</button>
+       <button class="buttonOperator">√</button>
+      <button class="buttonOperator">^</button>
     </div>
-    <div>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button class="buttonOperator">-</button>
+    <div class="button-row">
+      <button class="buttonOperator">(</button>
+      <button class="buttonOperator">)</button>
+      <button class="buttonOperator opts">÷</button>
+      <button class="buttonOperator opts">x</button>
     </div>
-    <div>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="buttonOperator">+</button>
+    <div class="button-row">
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="buttonOperator opts">-</button>
     </div>
-    <div>
-        <button>00</button>
-        <button>0</button>
-        <button>.</button>
-        <button class="buttonOperator">=</button>
+    <div class="button-row">
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="buttonOperator opts">+</button>
     </div>
-</div>
-</div>
-   <script src="calculator.js"></script> 
+    <div class="button-row">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="buttonOperator equal">=</button>
+    </div>
+    <div class="button-row">
+      <button>00</button>
+      <button>0</button>
+      <button>.</button>
+      <button class="buttonOperator cc">DEL</button>
+    </div>
+    <div class="button-row">
+      <button class="buttonOperator">M+</button>
+      <button class="buttonOperator">M-</button>
+      <button class="buttonOperator">MR</button>
+      <button class="buttonOperator">MC</button>
+    </div>
+  </div>
+
+  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-29.mp3"></audio>
+  <script src="https://cdn.jsdelivr.net/npm/expr-eval@2.0.2/dist/bundle.min.js"></script>
+  <script src="calculator.js"></script>
 </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="calculator.css" />
-    <title>Calculator - By Code Traversal</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="calculator">
-        <input type="text" id="inputBox" placeholder="0" />
-        <div>
-          <button class="button operator">AC</button>
-          <button class="button operator">DEL</button>
-          <button class="button operator">%</button>
-          <button class="button operator">/</button>
-        </div>
-        <div>
-          <button class="button">7</button>
-          <button class="button">8</button>
-          <button class="button">9</button>
-          <button class="button operator">*</button>
-        </div>
-        <div>
-          <button class="button">4</button>
-          <button class="button">5</button>
-          <button class="button">6</button>
-          <button class="button operator">-</button>
-        </div>
-        <div>
-          <button class="button">1</button>
-          <button class="button">2</button>
-          <button class="button">3</button>
-          <button class="button operator">+</button>
-        </div>
-
-        <div>
-          <button class="button">00</button>
-          <button class="button">0</button>
-          <button class="button">.</button>
-          <button class="button equalBtn">=</button>
-        </div>
-      </div>
-    </div>
-
-    <script src="calculator.js"></script>
-  </body>
-</html> -->

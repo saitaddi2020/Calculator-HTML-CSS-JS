@@ -1,55 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins' sans-serif;
+:root {
+  --bg: linear-gradient(45deg, rgb(159, 128, 71), rgb(36, 36, 137));
+  --button-bg: rgba(255, 255, 255, 0.15);
+  --button-hover: rgba(255, 255, 255, 0.25);
+  --text: white;
+  --input-bg: white;
+  --input-color: black;
 }
-body{
-    height: 100vh;
-    width: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, orange, blue);
-    padding-left: 700px;
-}
-.calculator{
-    border: 2px solid white;
-    height: 400px;
-    width: 380px;
-    box-shadow: 5px 5px 10px rgba(255, 178, 0, 0.6);
-    border-radius: 5px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-input{
-    height: 40px;
-    width: 200px;
-    border-radius: 5px;
-    font-size: medium;
-    padding: 10px;
 
+.dark-mode {
+  --bg: linear-gradient(45deg, #242124, #003366);
+  --button-bg: rgba(255, 255, 255, 0.08);
+  --button-hover: rgba(255, 255, 255, 0.18);
+  --text: #ffffff;
+  --input-bg: #222;
+  --input-color: #fff;
 }
-button{
-    height: 40px;
-    width: 45px;    
-    border-radius: 50%;
-    box-shadow: -4px -4px 10px rgba(4, 218, 193, 0.5);
-    background: transparent;
-    color: aliceblue;
-    cursor: pointer;
-    font-size: medium;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-.equal{
-    background-color: rgb(239, 113, 11);
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: 0.3s ease;
 }
-.cc{
-    background-color: rgb(225, 17, 17);
+
+.calculator {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  width: 90%;
+  max-width: 405px;
 }
-.plus{
-    color: rgb(9, 247, 53);
-    font-weight: 500;
+
+.top-bar {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-mode {
+  padding: 0px 9px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--button-bg);
+  color: var(--text);
+  transition: background-color 0.3s;
+}
+
+#status {
+  text-align: right;
+  font-size: 0.9rem;
+  color: lightgreen;
+  min-height: 20px;
+}
+
+input {
+  height: 50px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: var(--input-bg);
+  color: var(--input-color);
+  transition: 0.3s ease;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+button {
+  flex: 1 1 22%;
+  margin: 5px;
+  height: 54px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  background: var(--button-bg);
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: -2px -2px 5px rgba(255,255,255,0.1),
+              2px 2px 5px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.equal {
+  background-color: rgb(239, 113, 11);
+  color: white;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.cc {
+  background-color: rgb(225, 17, 17);
+  color: white;
+}
+
+.opts {
+  font-weight: 500;
+  font-size: 32px;
+  color: rgb(35, 235, 35);
+}
+
+/* Responsive */
+ @media (max-width: 480px) {
+  button {
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  input {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .calculator {
+    max-width: 350px;
+  }
+
+  button {
+    height: 55px;
+    font-size: 1.1rem;
+  }
+}
+#input {
+  caret-color: auto;
+}
+/* Include your previous CSS here */
+
+.history-log {
+  max-height: 100px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: #d2f4d2;
+  margin-top: 5px;
+}
+
+.history-entry {
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
