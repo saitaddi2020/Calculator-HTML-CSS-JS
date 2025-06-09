@@ -1,6 +1,6 @@
 # 🧮 Smart Calculator Web App
 
-A modern, responsive web calculator built using HTML, CSS, and JavaScript (or React, if applicable). This calculator goes beyond basic operations — it supports expression-based percentages and maintains a local history of all calculations.
+A modern, responsive web calculator built using HTML, CSS, and JavaScript. This calculator goes beyond basic operations — it supports expression-based percentages and maintains a local history of all calculations.
 
 ---
 
